@@ -2,8 +2,8 @@ cask "mast" do
   version "1.1.0"
   sha256 "5ff9f49857671353b945ab23022e1451aa022c83be7e493f2261e146654c663f"
 
-  url "https://github.com/leonhoulier/mast/releases/download/v#{version}/Mast-#{version}.dmg",
-      verified: "github.com/leonhoulier/mast/"
+  url "https://github.com/leonhoulier/mast-releases/releases/download/v#{version}/Mast-#{version}.dmg",
+      verified: "github.com/leonhoulier/mast-releases/"
   name "Mast"
   desc "macOS menu bar app that surfaces every git repo on your machine"
   homepage "https://usemast.sh/"
