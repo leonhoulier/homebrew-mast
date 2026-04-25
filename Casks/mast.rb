@@ -4,7 +4,7 @@ cask "mast" do
 
   url "https://usemast.sh/releases/Mast-#{version}.dmg"
   name "Mast"
-  desc "macOS menu bar app that surfaces every git repo on your machine"
+  desc "Menu bar dashboard surfacing every git repo on your machine"
   homepage "https://usemast.sh/"
 
   # Read the latest version from usemast.sh/releases/latest-mac.yml — the
@@ -25,9 +25,9 @@ cask "mast" do
 
   zap trash: [
     "~/Library/Application Support/Mast",
-    "~/Library/Caches/com.leonhoulier.mast",
+    "~/Library/Caches/sh.usemast.mast",
     "~/Library/Logs/Mast",
-    "~/Library/Preferences/com.leonhoulier.mast.plist",
-    "~/Library/Saved Application State/com.leonhoulier.mast.savedState",
+    "~/Library/Preferences/sh.usemast.mast.plist",
+    "~/Library/Saved Application State/sh.usemast.mast.savedState",
   ]
 end
