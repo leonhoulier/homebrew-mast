@@ -1,14 +1,24 @@
 cask "mast" do
-  version "1.1.0"
-  sha256 "5ff9f49857671353b945ab23022e1451aa022c83be7e493f2261e146654c663f"
+  version "1.2.4"
+  sha256 "73a72be20c3bec4d835f1aca6d7e2eea85fea69165fdb31b3733d24048e41cd3"
 
-  url "https://github.com/leonhoulier/mast-releases/releases/download/v#{version}/Mast-#{version}.dmg",
-      verified: "github.com/leonhoulier/mast-releases/"
+  url "https://usemast.sh/releases/Mast-#{version}.dmg"
   name "Mast"
   desc "macOS menu bar app that surfaces every git repo on your machine"
   homepage "https://usemast.sh/"
 
-  auto_updates false
+  # Read the latest version from usemast.sh/releases/latest-mac.yml — the
+  # same flat-file manifest electron-updater consumes. One source of truth
+  # across the website Direct Download link, the in-app updater, and brew.
+  livecheck do
+    url "https://usemast.sh/releases/latest-mac.yml"
+    regex(/^version:\s*(\S+)/i)
+  end
+
+  # Mast ships its own electron-updater that polls usemast.sh/releases/
+  # for newer versions and offers the "Download update" tray entry. Brew
+  # should not interfere — set auto_updates so `brew upgrade` skips it.
+  auto_updates true
   depends_on macos: ">= :monterey"
 
   app "Mast.app"
