@@ -1,6 +1,6 @@
 cask "mast" do
-  version "1.2.4"
-  sha256 "73a72be20c3bec4d835f1aca6d7e2eea85fea69165fdb31b3733d24048e41cd3"
+  version "1.3.0"
+  sha256 "20b4accc8d82a8422107f24acb27b169cb4535eedc6ed6e7df3655e0da390954"
 
   url "https://usemast.sh/releases/Mast-#{version}.dmg"
   name "Mast"
